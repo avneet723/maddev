@@ -1,10 +1,7 @@
 # MAD Web Dev #
-- [Setting up development](#dev)
-    - [Editor](#dev_editor)
-    - [Installing Node.js](#dev_node)
-    - [Setting up MongoDB](#dev_mongodb)
-- [Parsing Data](#parsing)
-    - [phantomjs](#parsing_phantom)
+
+. . .
+
 
 <a id="dev"></a>
 ## Setting up development ##
@@ -26,10 +23,8 @@ Charlie, I'll leave this to you - you're the expert on it! - Trev
 
 
 <a id="parsing_phantom"></a>
-### phantomjs ###
-[PhantomJS](http://phantomjs.org/) is a great tool for parsing data from websites as it allows you control a headless WebKit browser using JavaScript.
-
-Any `*.js` file in the parsing directory is most likely going to require [PhantomJS](http://phantomjs.org/) to run*:
+### PhantomJS ###
+[PhantomJS](http://phantomjs.org/) is a great tool for parsing data from websites as it allows you control a headless WebKit browser using JavaScript. Any `*.js` file in the parsing directory is most likely going to require [PhantomJS](http://phantomjs.org/) to run*:
 
     >>> phantomjs scriptName.js > outputFile
 
