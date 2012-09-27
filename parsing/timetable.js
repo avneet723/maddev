@@ -77,6 +77,9 @@ var getTableData = function(subject) {
 
   var tableData = page.evaluate(function(s) {
 
+    // var debug = '';
+    // var d = function(s) { debug = debug + s + '\n'; };
+
     // Holds this entire table in an object and till be added to as we
     // loop through the table.
     var ret = {
@@ -84,12 +87,12 @@ var getTableData = function(subject) {
       courses: []
     };
 
-    // get the columns in this table
-    var rawColumns = $('.dataEntryTable > tbody > tr');
+    // get the rows in this table
+    var rawRows = $('.dataEntryTable > tbody > tr');
 
     // get the column types & the number of columns
     var columnTypes = [];
-    rawColumns.first().children().each(function() {
+    rawRows.first().children().each(function() {
       // strip everything that isn't alphaNumeric, and make it lowercase
       var text = this.innerText.replace(/\W/g, '').toLowerCase();
       columnTypes.push(text);
@@ -98,36 +101,48 @@ var getTableData = function(subject) {
     // loop through the rest of the rows in this table (note how we sliced)
     // off element "0" as this is the heading of the table and we don't want
     // it in the data
-    rawColumns.slice(1);
-    rawColumns.each(function() {
+    rawRows.slice(1);
+    rawRows.each(function(rowIndex, row) {
 
       var rowObject = {};
 
       // loop through each of the columns in this row and populate the object
       // that represents it
-      var columns = $(this).children();
-      for (var i = 0; i < columns; i++) {
+      var columns = $(row).children();
 
-        var column = columns[i];
+      var i = 0;
+      var columnLength = columns.length;
+      var colspanShift = 0; // how many colspans have we skipped over?
 
-        // @TODO I know this is an issue, but I want to do other things in
-        // this program. As of now it garbles CRN and Exam
-        var text = column.innerText;
-        text = column.replace(/\n/g, ''); // remove newlines
+      while (i < (columnLength + colspanShift)) {
+
+        // Get the column accounting for columns that take up more than
+        // one position
+        var column = $(columns[i - colspanShift]);
+
+        var text = column.text();
+        // remove newlines, and only keep spaces, numeric & alpha values
+        // trim space
+        text = $.trim(text.replace(/\n|[^a-zA-Z0-9 ]/g, ''));
 
         // tricky case where there is a column span involved in which we have
         // to expand across multiple columns
-        var colspan = $(column).attr('colspan');
+        var colspan = column.attr('colspan');
 
-        if (colspan) // if we have a colspan
+        if (colspan && (colspan = parseInt(colspan, 10)) > 1)
         {
-          colspan = parseInt(colspan, 10); // @TODO error checking
           // loop through however many columns it stretches, and set the
           // object values accordingly
           for (var j = 0; j < colspan; j++) {
             rowObject[columnTypes[i + j]] = text;
-            i++;
           }
+
+          // push the loop counter to where we actually are after adjusting
+          i += colspan;
+
+          // adjust the column length so we cover all the values
+          // columnLength += colspan - 1;
+          colspanShift += colspan - 1;
         }
         else
         {
@@ -142,12 +157,11 @@ var getTableData = function(subject) {
 
     }); // END each row loop
 
+    // return "debug: " + debug + '\n'; // + JSON.stringify(ret, null, 4);
     return JSON.stringify(ret);
 
   }, subject);
 
-  console.log(tableData);
-  phantom.exit();
 
   return JSON.parse(tableData);
 };
@@ -179,8 +193,6 @@ var initTimetableParser = function() {
 
     return JSON.stringify(ret);
   });
-
-  console.log(subjectValueOptions);
 
   // convert it back to a JavaScript Object (and pull out the array)
   subjectValueOptions = JSON.parse(subjectValueOptions);
@@ -215,18 +227,16 @@ var stepIndex = 0; // The current async function that we are on.
 
 interval = setInterval(function() {
 
-  // console.log("stepIndex = " + stepIndex + " steps.length = " + steps.length);
-
   if (stepIndex < steps.length && !loadInProgress &&
-      typeof steps[stepIndex].func === 'function') {
-    // console.log(steps[stepIndex].func);
+      typeof steps[stepIndex].func === 'function')
+  {
     steps[stepIndex].func(steps[stepIndex].args);
     stepIndex++;
-    // console.log("Completed steps: " +  stepIndex + '/' + steps.length);
   }
 
   if (stepIndex >= steps.length ||
-      typeof steps[stepIndex].func !== 'function') {
+      typeof steps[stepIndex].func !== 'function')
+  {
     console.log(JSON.stringify(retObj, null, 4));
     phantom.exit();
   }
