@@ -7,7 +7,7 @@ app.configure(function() {
 });
 
 app.get('/', function(req, res){
-    res.render('index', {
+    res.render('grid', {
         variable: 'world!!'
     });
 });

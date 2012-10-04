@@ -19,10 +19,6 @@ Change directory to the maddev project, then:
 - `npm install express`
 - `npm install jade`
 
-<a id="dev_mongodb"></a>
-### Setting up MongoDB ###
-Charlie, I'll leave this to you - you're the expert on it! - Trev
-
 <a id="parsing"></a>
 ## Parsing Data ##
 
