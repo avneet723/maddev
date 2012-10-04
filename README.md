@@ -13,6 +13,11 @@ Use any editor you like!
 <a id="dev_node"></a>
 ### Installing Node.js ###
 Visit their [download page](http://nodejs.org/download/).
+####Packages####
+Change directory to the maddev project, then:
+
+- `npm install express`
+- `npm install jade`
 
 <a id="dev_mongodb"></a>
 ### Setting up MongoDB ###
