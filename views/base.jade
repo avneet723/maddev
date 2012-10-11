@@ -1,0 +1,18 @@
+doctype 5
+html
+  head
+    title= title
+
+    //- angular JS
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js')
+
+    //- Twitter bootstrap
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    script(src='/bootstrap/js/bootstrap.min.js')
+
+    //- Ours
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+  body
+    block nav
+    block content

@@ -18,6 +18,7 @@ Change directory to the maddev project, then:
 
 - `npm install express`
 - `npm install jade`
+- `npm install less-middleware` (for use of LESS on the server side)
 
 <a id="parsing"></a>
 ## Parsing Data ##
