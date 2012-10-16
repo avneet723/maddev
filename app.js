@@ -20,10 +20,10 @@ app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
-  app.use(express.favicon());
-  app.use(express.logger('dev'));
+  //app.use(express.favicon());
+  //app.use(express.logger('dev'));
   app.use(express.bodyParser());
-  app.use(express.methodOverride());
+  //app.use(express.methodOverride());
   app.use(app.router);
   app.use(require('less-middleware')({ src: __dirname + '/public' }));
   app.use(express.static(path.join(__dirname, 'public')));
@@ -33,15 +33,23 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+/*
+ * RESTful API
+ */
+
+//routing
 app.get('/', routes.index);
 app.get('/users', routes.list);
 app.get('/test', routes.test);
-app.get('/newUser', function(req, res){
+app.post('/newUser', newUserRAPI);
+
+//Implementation
+function newUserRAPI(req, res){
   var user = req.body;
-  console.log(req.body);
-  //console.log(user);
-  res.render('index', { title: 'MADWEBDEV', scripts: ['../public/Index.js'] });
-});
+  console.log(user);
+  res.render('index', { title: 'MADWEBDEV'});
+  db.save(new User(user), function(){});
+}
 
 /*
  * Socket.IO Setup

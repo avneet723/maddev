@@ -10,7 +10,7 @@ block content
 				h4
 					| Create New User
 				//-br
-				form 
+				form(action='/newUser', method='post') 
 					| First Name: 
 					input(type="text", name="firstname", id="firstname")
 					br
@@ -24,13 +24,14 @@ block content
 					input(type="text", name="username", id="username")
 					br
 					input(type="button", value='Create', onclick='newUser()', class='btn')
+					input(type='submit', class='btn', value='REST API')
 			div(class='no-left-margin span12 hero-unit')
 				h4
 					| Search for User
 				//- br
 				form 
 					| First Name: 
-					input(type="text", name="firstname", id="firstnamesearch")
+					input(type="text", id="firstnamesearch")
 					br
 					input(type="button", value='Search', onclick='searchUser()', class='btn')
 		div(class='column-fluid span3')
