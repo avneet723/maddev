@@ -4,7 +4,7 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'MADWEBDEV' });
+  res.render('index', { title: 'MADWEBDEV' }) ;
 };
 
 /*
@@ -22,3 +22,5 @@ exports.list = function(req, res){
 exports.test = function(req, res) {
   res.render('test', { message: 'hello world' });
 };
+
+/*exports.user =*/
