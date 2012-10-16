@@ -1,8 +1,18 @@
 body {
-  background-color: #3cfd46;
+  background-color: #fff;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 a {
   color: #00B7FF;
+}
+
+.no-left-margin{
+	margin-left: 0;
+}
+
+#editor{
+	height: 300px;
+	position: relative;
+	margin: 5;
 }

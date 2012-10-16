@@ -9,6 +9,7 @@ var user = mongoose.Schema({
 });
 
 var fooditem = mongoose.Schema({
+	name       : String,
 	servingsize: String,
 	carbs      : Number,
 	fats	   : Number,
@@ -16,7 +17,7 @@ var fooditem = mongoose.Schema({
 });
 
 //EXPORTS
-mongoose.model('User', user);
-mongoose.model('FoodItem', fooditem);
+mongoose.model('User', user, 'Trial');
+mongoose.model('FoodItem', fooditem, 'Trial');
 exports.mongoose = mongoose;
 

@@ -1,0 +1,14 @@
+--- 
+applications: 
+  .: 
+    instances: 1
+    name: madwebdev
+    mem: 64M
+    url: ${name}.${target-base}
+    infra: aws
+    framework: 
+      name: node
+      info: 
+        description: Node.js Application
+        exec: 
+        mem: 64M
