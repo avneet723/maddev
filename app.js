@@ -5,9 +5,7 @@
 
 var express = require('express')
   , app     = express.createServer()
-  , routes  = require('./routes')
-  , user    = require('./routes/user')
-  , test    = require('./routes/test')
+  , routes  = require('./routes/routes.js')
   , http    = require('http')
   , path    = require('path')
   //, io      = require('socket.io').listen(app) 
@@ -27,7 +25,7 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
-  //app.use(require('less-middleware')({ src: __dirname + '/public' }));
+  app.use(require('less-middleware')({ src: __dirname + '/public' }));
   app.use(express.static(path.join(__dirname, 'public')));
 });
 
@@ -36,8 +34,8 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
-app.get('/users', user.list);
-app.get('/test', test.test);
+app.get('/users', routes.list);
+app.get('/test', routes.test);
 app.get('/newUser', function(req, res){
   var user = req.body;
   console.log(req.body);
@@ -76,6 +74,8 @@ io.sockets.on('connection', function(socket){
     }));
   } 
 });
+
+console.log(std);
 
 
 
