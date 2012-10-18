@@ -72,7 +72,8 @@ io.sockets.on('connection', function(socket){
   };
 
   function newUser(userObj) {
-    console.log('Recieved new User.')
+    console.log('Recieved new User.');
+    console.log(JSON.stringify(userObj));
     var user = new User(userObj);
     db.save(user, function(){
       socket.emit('log', 'User Successfully Saved.')
