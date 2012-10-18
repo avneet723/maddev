@@ -35,9 +35,9 @@ function save(model, callback) {
 		console.error('Only known models can be saved.');
 		return;
 	}
-	model.save(std.customPrint(function(){
+	model.save(std.customPrint(function(data){
 		console.log('Document Successfully Saved.');
-		callback();
+		callback(data);
 	}));
 };
 

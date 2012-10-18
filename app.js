@@ -41,14 +41,17 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/users', routes.list);
 app.get('/test', routes.test);
-app.post('/newUser', newUserRAPI);
+app.post('/create/newuser', newUserRAPI);
 
 //Implementation
 function newUserRAPI(req, res){
   var user = req.body;
   console.log(user);
-  res.render('index', { title: 'MADWEBDEV'});
-  db.save(new User(user), function(){});
+  db.save(new User(user), function(data){
+    //figure out how to redirect this the right way so that
+    //you can keep the data you get here
+    res.render('index', { title: data.firstname});
+  });
 }
 
 /*

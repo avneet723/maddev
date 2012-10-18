@@ -6,10 +6,10 @@ var socket = io.connect('http://' + domain + ':4000');
 //Button Controllers-----------------------------------------------------------
 function newUser(){
 	var user = {
-		firstname: $('firstname').value, 
-		lastname : $('lastname').value,	
-		username : $('username').value,
-		pid      : parseInt($('pid').value)
+		firstname: $('#firstname').value, 
+		lastname : $('#lastname').value,	
+		username : $('#username').value,
+		pid      : parseInt($('#pid').value)
 	};
 	socket.emit('newUser', user);
 	console.log('New User Sent');
@@ -18,22 +18,25 @@ function newUser(){
 
 function searchUser(){
 	var query = {
-		firstname: $('firstnamesearch').value
+		firstname: $('#firstnamesearch').value
 	};
 	socket.emit('getUser', query);
 }
 
 function deleteUser() {
 	var query = {
-		firstname: $('firstnamedelete').value
+		firstname: $('#firstnamedelete').value
 	};
 	socket.emit('deleteUser', query);
 }
 
+
+
+
 //Helpers----------------------------------------------------------------------
-function $(id){
+/*function $(id){
 	return document.getElementById(id);
-}
+}*/
 
 //Run after window loads fully-------------------------------------------------
 window.onload = function(){
@@ -43,6 +46,9 @@ window.onload = function(){
 	editor.renderer.setShowGutter(false);
 	editor.insert("madweb$>Welcome to MADWEBDEV's first experiment!\nmadweb$>");
 
+	//Twitter Boostrap Dropdown fix
+	$('.dropdown-toggle').dropdown();
+	
 	//Socket Setup-------------------------------------------------------------
 	socket.on('foundUser', foundUser);
 	function foundUser(user) {

@@ -1,8 +1,8 @@
 extends base
 
 block content
-	h1= title
-	p Our first trial with Node.js, Express.js, Angular.js, Socket.IO, Ace Editor, Jade, Less, MongoDB, jasmine, testacular and Twitter Boostrap
+	//-h1= title
+	//-p Our first trial with Node.js, Express.js, Angular.js, Socket.IO, Ace Editor, Jade, Less, MongoDB, jasmine, testacular and Twitter Boostrap
 	br
 	div(class='row-fluid')
 		div(class='column-fluid span3')
@@ -10,7 +10,7 @@ block content
 				h4
 					| Create New User
 				//-br
-				form(action='/newUser', method='post') 
+				form(action='/create/newuser', method='post') 
 					| First Name: 
 					input(type="text", name="firstname", id="firstname")
 					br
