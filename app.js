@@ -13,8 +13,6 @@ var express = require('express')
   , std     = require('./modules/std.js')
   , User    = db.User;
 
-app.listen(3000);
-console.log("Express server listening on port 3000");
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -32,6 +30,11 @@ app.configure(function(){
 app.configure('development', function(){
   app.use(express.errorHandler());
 });
+
+
+console.log("Express server listening on port " + (process.env.port || 3000));
+
+console.log(app);
 
 /*
  * RESTful API
@@ -57,7 +60,7 @@ function newUserRAPI(req, res){
 /*
  * Socket.IO Setup
  */
-var server = http.createServer(function(){}).listen(4000)
+var server = app.listen(process.env.port || 3000)
   , io     = require('socket.io').listen(server);
 
 io.sockets.on('connection', function(socket){

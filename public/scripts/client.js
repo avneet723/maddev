@@ -1,7 +1,7 @@
 
 //Our ClientSide JS
 var domain = document.domain;
-var socket = io.connect('http://' + domain + ':4000');
+var socket = io.connect('http://' + domain + ':3000');
 
 //Button Controllers-----------------------------------------------------------
 function newUser(){
