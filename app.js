@@ -34,14 +34,15 @@ app.configure('development', function(){
 
 console.log("Express server listening on port " + (process.env.port || 3000));
 
-console.log(app);
 
 /*
  * RESTful API
  */
 
 //routing
-app.get('/', routes.index);
+app.get('/', function(req, res){
+  routes.index(req, res, (process.env.port || 3000));
+});
 app.get('/users', routes.list);
 app.get('/test', routes.test);
 app.post('/create/newuser', newUserRAPI);
