@@ -5,8 +5,8 @@
 
 exports.index = function(req, res, portNum){
   res.render('index', 
-  	{ title: 'MADWEBDEV' ,
-	  port : portNum
+  	{ title: 'MADWEBDEV' /*,
+	  port : portNum*/
     });
 };
 
