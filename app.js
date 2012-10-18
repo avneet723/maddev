@@ -41,7 +41,7 @@ console.log("Express server listening on port " + (process.env.port || 3000));
 
 //routing
 app.get('/', function(req, res){
-  routes.index(req, res, (process.env.port || 3000));
+  routes.index(req, res, (app.address().port));
 });
 app.get('/users', routes.list);
 app.get('/test', routes.test);
