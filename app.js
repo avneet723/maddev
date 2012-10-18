@@ -4,7 +4,7 @@
  */
 
 var express = require('express')
-  , app     = express.createServer()
+  , app     = express()
   , routes  = require('./routes/routes.js')
   , http    = require('http')
   , path    = require('path')
