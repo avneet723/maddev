@@ -4,10 +4,13 @@
  */
 
 exports.index = function(req, res, portNum){
-  res.render('index', 
-  	{ title: 'MADWEBDEV' /*,
-	  port : portNum*/
-    });
+  // res.render('index', 
+  //    { title: 'MADWEBDEV' /*,
+     //  port : portNum*/
+  //   });
+
+
+    res.render('indexA');
 };
 
 /*

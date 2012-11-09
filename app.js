@@ -24,7 +24,8 @@ app.configure(function(){
   //app.use(express.methodOverride());
   app.use(app.router);
   app.use(require('less-middleware')({ src: __dirname + '/public' }));
-  app.use(express.static(path.join(__dirname, 'public')));
+  app.use("/public", express.static(path.join(__dirname, 'public')));
+  app.use("/assets", express.static(path.join(__dirname, 'assets')));
 });
 
 app.configure('development', function(){
@@ -54,7 +55,9 @@ function newUserRAPI(req, res){
   db.save(new User(user), function(data){
     //figure out how to redirect this the right way so that
     //you can keep the data you get here
+
     res.render('index', { title: data.firstname});
+    // res.render('indexA.html');
   });
 }
 
