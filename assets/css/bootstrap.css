@@ -1615,7 +1615,7 @@ select:focus:required:invalid:focus {
   font-weight: normal;
   line-height: 20px;
   text-align: center;
-  text-shadow: 0 1px 0 #ffffff;
+  text-shadow: 0 0px 1px #ffffff;
   background-color: #eeeeee;
   border: 1px solid #ccc;
 }
@@ -3022,7 +3022,7 @@ table th[class*="span"],
   font-weight: bold;
   line-height: 20px;
   color: #000000;
-  text-shadow: 0 1px 0 #ffffff;
+  text-shadow: 0 0px 1 #ffffff;
   opacity: 0.2;
   filter: alpha(opacity=20);
 }
@@ -5833,6 +5833,7 @@ a.badge:hover {
 .carousel-caption p {
   line-height: 20px;
   color: #ffffff;
+  text-shadow: 0px 0px 10px black;
 }
 
 .carousel-caption h4 {
