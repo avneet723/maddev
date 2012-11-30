@@ -1,0 +1,58 @@
+!!! 5
+html
+head
+    meta(name='viewport', content='initial-scale=1.0, user-scalable=no')
+    style(type='text/css')
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map_canvas { height: 100% }
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')
+    script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyA8vdQH_8XBS6Pr2b5Bggt8ElIvkzM8n-8&sensor=true')
+    link(rel='stylesheet', href='/public/bootstrap/css/bootstrap.min.css')
+    script(src='/public/bootstrap/js/bootstrap.min.js')
+    script(src='http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js')
+    script(type='text/javascript')
+      function initialize() {
+      var mapOptions = {
+      center: new google.maps.LatLng(37.227774, -80.421919),
+      zoom: 17,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+       
+        function mapBuses(){  
+          $.get('/bus/getcurrentbusinfo', function(xml){
+              $xml = $(xml);
+              infos = $xml.find('RTFInfo');
+              for(i = 0; i < infos.length; i++){
+                lat   = $(infos[i]).find('Latitude').text();
+                longi = $(infos[i]).find('Longitude').text();
+                var options = { center: new google.maps.LatLng(lat,longi), radius: 10, fillColor: "#00ff00"};
+                var overlay = new google.maps.Circle(options);
+                overlay.setMap(map);
+              }
+            });
+        } 
+
+        function getDirections(){
+          var DirServ = new google.maps.DirectionsService();
+          var DirReq  = {
+            origin: new google.maps.LatLng(37.22978, -80.41997),
+            destination: new google.maps.LatLng(37.2216, -80.424),
+            travelMode: "WALKING"
+          };
+          DirServ.route(DirReq, function(result, status){
+            var renderOpts = {
+              'directions': result,
+              'map': map
+            };
+            var DirRend = new google.maps.DirectionsRenderer(renderOpts);
+          });
+        }
+        document.getElementById("Make_Circle").onclick = getDirections;
+      }
+  body(onload='initialize()')
+    div(class='row-fluid', style='height:100%;')
+      div(style='height:100%, width:150px')
+        a(class='btn', id='Make_Circle') Make Circle
+      #map_canvas(style='width: 100%; height: 100%;')
