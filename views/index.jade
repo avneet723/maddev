@@ -1,0 +1,73 @@
+extends base
+
+block append content
+
+  //- ==================================================
+  //- Carousel
+  //- ==================================================
+  #myCarousel.carousel.slide
+    .carousel-inner
+      .item.active
+        img(src='../assets/img/vt@princeton.jpg', alt='')
+        .container
+          .carousel-caption
+            h1 Healthiest College in U.S.
+            p.lead
+              | Healthy food is all-important at Virginia Tech. It ranks number 10 on College Prowler’s list of healthiest dining options (as rated by students) and number 3 on The Princeton Review’s list of best food. The fitness center offers a variety of programs including a running club and a six-week workout incentive program.
+            a.btn.btn-large.btn-primary(href='http://greatist.com/health/25-healthiest-colleges/') Check it out!
+      .item
+        img(src='../assets/img/tedvt.jpeg', alt='')
+        .container
+          .carousel-caption
+            h1 TEDxVirginia Tech
+            p.lead
+              | Inaugural TEDxVirginiaTech event on Nov. 10, will highlight innovative faculty, students, and alumni
+            a.btn.btn-large.btn-primary(href='http://www.vtnews.vt.edu/articles/2012/10/101512-uged-tedx.html') Learn more
+      .item
+        img(src='../assets/img/vtvfsu.jpg', alt='')
+        .container
+          .carousel-caption
+            h1 VT v. FSU
+            p.lead
+              | When No. 8 Florida State and Virginia Tech meet Thursday night only the Seminoles will be playing for high stakes.
+            a.btn.btn-large.btn-primary(href='http://nbcsports.msnbc.com/id/49732688/ns/sports-college_football/') Read More
+    a.left.carousel-control(href='#myCarousel', data-slide='prev') ‹
+    a.right.carousel-control(href='#myCarousel', data-slide='next') ›
+
+  //- .carousel
+
+  //- ==================================================
+  //- Marketing messaging and featurettes
+  //- ==================================================
+
+  //- Wrap the rest of the page in another container to center all the content.
+  .container.marketing
+    //- Three columns of text below the carousel
+    .row
+      .span4
+        img.img-circle(src='http://placehold.it/140x140')
+        h2 Heading
+        p
+          | Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+        p
+          a.btn(href='#') View details »
+      //- /.span4
+      .span4
+        img.img-circle(src='http://placehold.it/140x140')
+        h2 Heading
+        p
+          | Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+        p
+          a.btn(href='#') View details »
+      //- /.span4
+      .span4
+        img.img-circle(src='http://placehold.it/140x140')
+        h2 Heading
+        p
+          | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+        p
+          a.btn(href='#') View details »
+      //-/.span4
+    //-/.row
+
+  //- END Marketing
