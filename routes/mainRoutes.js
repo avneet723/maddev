@@ -23,26 +23,4 @@ module.exports = function(app) {
     res.render('maps');
   });
 
-  /*
-
-
-  app.post('/create/newuser', newUserRAPI);
-
-  //Implementation
-  function newUserRAPI(req, res){
-    var user = req.body;
-    console.log(user);
-    db.save(new User(user), function(data){
-      //figure out how to redirect this the right way so that
-      //you can keep the data you get here
-
-      res.render('index', { title: data.firstname});
-      // res.render('indexA.html');
-    });
-  }
-
-
-  */
-
-
 };

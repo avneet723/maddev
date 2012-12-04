@@ -1,0 +1,79 @@
+extends base
+
+block content
+	//-h1= title
+	//-p Our first trial with Node.js, Express.js, Angular.js, Socket.IO, Ace Editor, Jade, Less, MongoDB, jasmine, testacular and Twitter Boostrap
+	br
+	div(class='row-fluid')
+		div(class='column-fluid span3')
+			div(class='span12 hero-unit')
+				h4
+					| Create New User
+				//-br
+				form(action='/create/newuser', method='post') 
+					| First Name: 
+					input(type="text", name="firstname", id="firstname")
+					br
+					| Last Name: 
+					input(type="text", name="lastname", id="lastname")
+					br
+					| PID:       
+					input(type="text", name= "pid", id= "pid")
+					br
+					| Username: 
+					input(type="text", name="username", id="username")
+					br
+					input(type="button", value='Create', onclick='newUser()', class='btn')
+					input(type='submit', class='btn', value='REST API')
+			div(class='no-left-margin span12 hero-unit')
+				h4
+					| Search for User
+				//- br
+				form 
+					| First Name: 
+					input(type="text", id="firstnamesearch")
+					br
+					input(type="button", value='Search', onclick='searchUser()', class='btn')
+		div(class='column-fluid span3')
+			div(class='span12 hero-unit')
+				h4
+					| Delete User
+				//- br
+				form 
+					| First Name: 
+					input(type="text", name="firstname", id="firstnamedelete")
+					br
+					input(type="button", value='Delete', onclick='deleteUser()', class='btn btn-danger')
+			div(class='no-left-margin span12 hero-unit ')
+				h4
+					| Some New Tile
+				//- br
+				form 
+					| Some Field 1: 
+					input(type="text", name="", id="")
+					br
+					div(class='btn-group')
+						button(class='btn btn-success') Good
+						button(class='btn') Neutral
+						button(class='btn btn-danger') Bad
+		div(class='column-fluid span6')
+			div(class='span12 hero-unit')
+				h4
+					| Action Result
+				//- br
+				div(id='editor')
+			div(class='no-left-margin span12 hero-unit')
+				ul(class="nav nav-tabs")
+					li(class='active')
+						a(href="#Notify" , data-toggle="tab") Notify
+					li
+						a(href="#Success" , data-toggle="tab") Success
+					li
+						a(href="#Warning" , data-toggle="tab") Warning
+					li
+						a(href="#Error" , data-toggle="tab") Error
+				div(class='tab-content')
+					div(class='tab-pane active', id='Notify') MADWEBDEV ROCKS MUH SOCKS!!!
+					div(class='tab-pane ', id='Success') Winning...it worked!
+					div(class='tab-pane ', id='Warning') Don't get too excited though...
+					div(class='tab-pane ', id='Error') Cuz it just broke again...WOMP
