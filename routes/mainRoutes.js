@@ -17,13 +17,10 @@ module.exports = function(app) {
     });
   });
 
->>>>>>>>>>>>>>>>>>>> File 1
->>>>>>>>>>>>>>>>>>>> File 2
   app.get('/bus', function(req, res) {
     res.render('bus', {
       pageTitle: 'Bus Routes'
     });
   });
 
-<<<<<<<<<<<<<<<<<<<<
 };
