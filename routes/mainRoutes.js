@@ -15,4 +15,13 @@ module.exports = function(app) {
     res.render('maps');
   });
 
+>>>>>>>>>>>>>>>>>>>> File 1
+>>>>>>>>>>>>>>>>>>>> File 2
+  app.get('/bus', function(req, res) {
+    res.render('bus', {
+      pageTitle: 'Bus Routes'
+    });
+  });
+
+<<<<<<<<<<<<<<<<<<<<
 };
