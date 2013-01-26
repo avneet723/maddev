@@ -3,7 +3,7 @@ html {
 }
 
 body {
-	padding-top: 65px; 
+	padding-top: 130px; 
     height: 100%;
     margin: 0;
 }
@@ -15,6 +15,6 @@ body {
 }
 
 #map_canvas {
-    height: 500px;
-    width: 500px;
+    height: 100%;
+    width: 100%;
 }
