@@ -33,7 +33,7 @@ head
 
     //- Wrap the .navbar in .container to center it on the page and provide easy way to target it with .navbar-wrapper.
     .container.navbar-wrapper
-      .navbar.navbar-inverse
+      .navbar.navbar-inverse.navbar-fixed-top
         .navbar-inner
           //- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize.
           a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
@@ -56,9 +56,8 @@ head
                     | Bus Lookup
                     b.caret
                   ul.dropdown-menu
-                    textarea#textarea.field.span2(rows='1', placeholder='Bus Code')
-                    textarea#textarea.field.span2(rows='1', placeholder='Bus Code')
-                    button.btn Submit!
+                    input.span2(type='text', placeholder='Bus Code')
+                    button.btn.btn-large.btn-primary(type='submit') Submit!
                 li
                   a(href='#twitter') Twitter
                 li
