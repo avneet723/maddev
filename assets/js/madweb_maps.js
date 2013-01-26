@@ -1,12 +1,72 @@
+
+
 $(document).ready(function () {
-  
-  var mapOptions = {
+
+  //-----------------------------
+  // page variables
+  //
+  var
+  directionRenderer,
+  startLocation,
+  endLocation,
+  markerArray = [],
+  mapOptions = {
     center: new google.maps.LatLng(37.227774, -80.421919),
     zoom: 17,
     mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
+  },
+  map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
-  var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+  //-----------------------------
+  // Make these calls on page load
+  //
+  getBuildingInfo();
+
+  //-----------------------------
+  // Listeners
+  //
+  $("#getDirections").click(function() {
+    getDirections(startLocation, endLocation);
+  });
+
+  $('#startLocation').change(function() {
+    var building = JSON.parse($('#startLocation').val());
+    startLocation = {
+      lat: building.lat,
+      long: building.long
+    };
+  });
+
+  $('#endLocation').change(function() {
+    var building = JSON.parse($('#endLocation').val());
+    endLocation = {
+      lat: building.lat,
+      long: building.long
+    };
+  });
+
+  function clearOverlays() {
+    for (var i = 0; i < markersArray.length; i++) {
+      markersArray[i].setMap(null);
+    }
+  }
+
+  // Gets all the building information on apge load
+  function getBuildingInfo() {
+    $.get('/assets/data/buildingInfo.json', function(data) {
+
+      var buildingInfo = data.buildings;
+      var selectOptions = '';
+      for(var k = 0, len = buildingInfo.length; k < len; ++k) {
+        var building = buildingInfo[k];
+        selectOptions += '<option value=\'' + JSON.stringify(building) + '\'>' +
+          building.name + '</option>';
+      }
+
+      $('#startLocation').html(selectOptions);
+      $('#endLocation').html(selectOptions);
+    }); // end Ajax call
+  }
 
   function mapBuses() {
 
@@ -33,12 +93,22 @@ $(document).ready(function () {
     }); // end Ajax call
   } // end map Buses
 
-  function getDirections() {
+  function getDirections(startLocation, endLocation) {
+
+    if(typeof startLocation === 'undefined' ||
+       typeof endLocation === 'undefined') {
+      return;
+    }
+
+    if(typeof directionRenderer !== 'undefined') {
+      directionRenderer.setMap(null);
+    }
+
     var DirServ = new google.maps.DirectionsService();
 
     var DirReq  = {
-      origin: new google.maps.LatLng(37.22978, -80.41997),
-      destination: new google.maps.LatLng(37.2216, -80.424),
+      origin: new google.maps.LatLng(startLocation.lat, startLocation.long),
+      destination: new google.maps.LatLng(endLocation.lat, endLocation.long),
       travelMode: "WALKING"
     };
 
@@ -47,20 +117,8 @@ $(document).ready(function () {
         'directions': result,
         'map': map
       };
-      var DirRend = new google.maps.DirectionsRenderer(renderOpts);
+      directionRenderer = new google.maps.DirectionsRenderer(renderOpts);
     });
   }
 
-  document.getElementById("Make_Circle").onclick = getDirections;
-
 });
-
-function getBuildingInfo() {
-  $.get('/assets/data/buildingInfo.json', function(data) {
-
-    console.log(data);
-  
-  }); // end Ajax call
-}
-
-getBuildingInfo();

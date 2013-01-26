@@ -12,6 +12,4 @@ Visit their [download page](http://nodejs.org/download/).
 
 When finished, change directory to the maddev project, then install the packages :
 
-- `npm install express`
-- `npm install jade`
-- `npm install less-middleware` (for use of LESS on the server side)
+- `npm install`
