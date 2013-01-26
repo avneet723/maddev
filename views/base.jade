@@ -34,7 +34,7 @@ head
     //- Wrap the .navbar in .container to center it on the page and provide easy way to target it with .navbar-wrapper.
     .container.navbar-wrapper
       .navbar.navbar-inverse.navbar-fixed-top
-        .navbar-inner
+        .navbar-inner.pull-center
           //- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize.
           a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
             span.icon-bar
@@ -57,7 +57,8 @@ head
                     b.caret
                   ul.dropdown-menu
                     form.navbar-search.pull-right
-                      input.span2(type='text', placeholder='Bus Code')
+                      input.span2(type='text', id='routename', placeholder='Route Name')
+                      input.span2(type='text', id='stopcode', placeholder='Stop Code')
                       button.btn.btn-large.btn-primary(type='submit') Submit!
                 li
                   a(href='#twitter') Twitter
