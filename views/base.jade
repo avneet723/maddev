@@ -53,11 +53,12 @@ head
                   a(href='#maps') Maps
                 li.dropdown
                   a.dropdown-toggle(href='#', data-toggle='dropdown')
-                    | Bus Lookup
+                    | Bus-Lookup
                     b.caret
                   ul.dropdown-menu
-                    input.span2(type='text', placeholder='Bus Code')
-                    button.btn.btn-large.btn-primary(type='submit') Submit!
+                    form.navbar-search.pull-right
+                      input.span2(type='text', placeholder='Bus Code')
+                      button.btn.btn-large.btn-primary(type='submit') Submit!
                 li
                   a(href='#twitter') Twitter
                 li
