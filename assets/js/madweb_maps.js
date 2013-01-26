@@ -1,5 +1,5 @@
-function initialize() {
-
+$(document).ready(function () {
+  
   var mapOptions = {
     center: new google.maps.LatLng(37.227774, -80.421919),
     zoom: 17,
@@ -53,4 +53,4 @@ function initialize() {
 
   document.getElementById("Make_Circle").onclick = getDirections;
 
-}
+});
