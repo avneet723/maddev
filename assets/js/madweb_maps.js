@@ -54,3 +54,13 @@ $(document).ready(function () {
   document.getElementById("Make_Circle").onclick = getDirections;
 
 });
+
+function getBuildingInfo() {
+  $.get('/assets/data/buildingInfo.json', function(data) {
+
+    console.log(data);
+  
+  }); // end Ajax call
+}
+
+getBuildingInfo();
