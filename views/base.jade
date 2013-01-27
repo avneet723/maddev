@@ -33,7 +33,7 @@ head
 
     //- Wrap the .navbar in .container to center it on the page and provide easy way to target it with .navbar-wrapper.
     .container.navbar-wrapper
-      .navbar.navbar-inverse.navbar-fixed-top
+      .navbar.navbar-inverse
         .navbar-inner.pull-center
           //- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize.
           a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
@@ -48,9 +48,9 @@ head
                 li.active
                   a(href='#') Home
                 li
-                  a(href='#dining') Dining
+                  a(href='dining') Dining
                 li
-                  a(href='#maps') Maps
+                  a(href='maps') Maps
                 li.dropdown
                   a.dropdown-toggle(href='#', data-toggle='dropdown')
                     | Bus-Lookup
@@ -61,9 +61,9 @@ head
                       input.span2(type='text', id='stopcode', placeholder='Stop Code')
                       button.btn.btn-large.btn-primary(type='submit') Submit!
                 li
-                  a(href='#twitter') Twitter
+                  a(href='twitter') Twitter
                 li
-                  a(href='#about') About
+                  a(href='about') About
                 //- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns
                 li.dropdown
                   a.dropdown-toggle(href='#', data-toggle='dropdown')
@@ -87,7 +87,7 @@ head
       //- .navbar.navbar-inverse
     //- .container.navbar-wrapper
 
-
+  
 
     //- ==================================================
     //- CONTENT - all pages that extend this should put
@@ -102,7 +102,7 @@ head
         p.pull-right
           a(href='#') Back to top
         p
-          | © 2012 Company, Inc. ·
+          | © 2012 Mobile Application Development ·
           a(href='#') Privacy
           | ·
           a(href='#') Terms
