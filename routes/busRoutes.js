@@ -53,12 +53,12 @@ module.exports = function(app) {
 
   // Gets all the Scheduled Stop Names for a specific route short name
   //
-  // e.g. invoke like www.t.com/bus/GetScheduledStopNames?stopCode=1334
+  // e.g. invoke like www.t.com/bus/GetScheduledRoutes?stopCode=1334
   //
   // See: http://www.bt4u.org/BT4U_Webservice.asmx?op=GetScheduledStopNames
   app.get('/bus/GetScheduledRoutes', function(request, response) {
 
-    if (typeof request.query.routeShortName === 'undefined') {
+    if (typeof request.query.stopCode === 'undefined') {
       response.send('Please provide a route short name, e.g. ' +
         ' www.url.com/bus/GetScheduledRoutes?stopCode=1334');
       return;

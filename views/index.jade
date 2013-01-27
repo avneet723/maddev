@@ -1,5 +1,14 @@
 extends base
 
+block append footer
+  script
+    !function ($) {
+      $(function(){
+        // carousel demo
+        $('#myCarousel').carousel()
+      })
+    }(window.jQuery)
+
 block append content
 
   //- ==================================================
