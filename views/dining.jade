@@ -4,52 +4,204 @@ block append header
 
   link(rel='stylesheet', href='/assets/css/madweb_maps.css')
 
+block append footer
+  script
+    !function ($) {
+      $(function(){
+        // carousel demo
+        $('#myCarousel').carousel()
+      })
+    }(window.jQuery)
+
 block append content
     .container-fluid
       .row-fluid
         .span3
           .well.sidebar-nav
             ul.nav.nav-list
-              li.nav-header Sidebar
-              li.active
-                a(href='#') Link
+              li.nav-header Dining
               li
-                a(href='#') Link
+                a(href='#') Dining Center Hours
               li
-                a(href='#') Link
+                a(href='#') Menus and Nutrition
               li
-                a(href='#') Link
-              li.nav-header Sidebar
+                a(href='#') Food Safety
               li
-                a(href='#') Link
+                a(href='#') Employment
               li
-                a(href='#') Link
+                a(href='#') Feedback
+              li.nav-header Dining Centers
+              li.dropdown
+                a.dropdown-toggle(href='#', data-toggle='dropdown')
+                    | Au Bon Pain
+                    b.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Overview 
+                    li
+                      a(href='#') Menu
+                    li
+                      a(href='#') Hours
+              li.dropdown
+                a.dropdown-toggle(href='#', data-toggle='dropdown')
+                    | D2
+                    b.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Overview 
+                    li
+                      a(href='#') Menu
+                    li
+                      a(href='#') Hours
+              li.dropdown
+                a.dropdown-toggle(href='#', data-toggle='dropdown')
+                    | Deet's Place
+                    b.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Overview 
+                    li
+                      a(href='#') Menu
+                    li
+                      a(href='#') Hours
+              li.dropdown
+                a.dropdown-toggle(href='#', data-toggle='dropdown')
+                    | DXpress
+                    b.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Overview 
+                    li
+                      a(href='#') Menu
+                    li
+                      a(href='#') Hours
+              li.dropdown
+                a.dropdown-toggle(href='#', data-toggle='dropdown')
+                    | Hokie Grill & Co.
+                    b.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Overview 
+                    li
+                      a(href='#') Menu
+                    li
+                      a(href='#') Hours
+              li.dropdown
+                a.dropdown-toggle(href='#', data-toggle='dropdown')
+                    | Owen's Food Court
+                    b.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Overview 
+                    li
+                      a(href='#') Menu
+                    li
+                      a(href='#') Hours
+              li.dropdown
+                a.dropdown-toggle(href='#', data-toggle='dropdown')
+                    | Sbarro
+                    b.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Overview 
+                    li
+                      a(href='#') Menu
+                    li
+                      a(href='#') Hours
+              li.dropdown
+                a.dropdown-toggle(href='#', data-toggle='dropdown')
+                    | Turner Place
+                    b.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Overview 
+                    li
+                      a(href='#') Menu
+                    li
+                      a(href='#') Hours
+              li.dropdown
+                a.dropdown-toggle(href='#', data-toggle='dropdown')
+                    | Vet Med Café
+                    b.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Overview 
+                    li
+                      a(href='#') Menu
+                    li
+                      a(href='#') Hours
+              li.dropdown
+                a.dropdown-toggle(href='#', data-toggle='dropdown')
+                    | West End Market
+                    b.caret
+                  ul.dropdown-menu
+                    li
+                      a(href='#') Overview 
+                    li
+                      a(href='#') Menu
+                    li
+                      a(href='#') Hours
+          .well.sidebar-nav
+            ul.nav.nav-list
+              li.nav-header Stay Connected
               li
-                a(href='#') Link
+                span.roll
+                a.target_blank(href='http://twitter.com/HokiesDine')
+                img(src='../assets/img/dining/twitter_icon.jpg', width='189', height='70', alt='Follow Us on Twitter!')
               li
-                a(href='#') Link
+                span.roll
+                a.target_blank(href='http://www.facebook.com/VirginiaTechDining')
+                img(src='/assets/img/dining/facebook_icon.jpg', width='189', height='68', alt='Like Us on Facebook!')
               li
-                a(href='#') Link
+                span.roll
+                a.target_blank(href='http://www.dining.vt.edu/hours/')
+                img(src='/assets/img/dining/dining_centers_hours_icon.jpg', width='189', height='70', alt='Dining Centers Hours')
               li
-                a(href='#') Link
-              li.nav-header Sidebar
+                span.roll
+                a.target_blank(href='http://www.dining.vt.edu/mobilemenu/')
+                img(src='/assets/img/dining/mobile_menu_icon.jpg', width='189', height='70', alt='Mobile Menu')
               li
-                a(href='#') Link
-              li
-                a(href='#') Link
-              li
-                a(href='#') Link
-          //
-            /.well 
-        //
-          /span
+                span.roll
+                a.target_blank(href='http://www.dining.vt.edu/news/')
+                img(src='/assets/img/dining/news_icon.jpg', width='189', height='70', alt='In the News')
+
+
         .span9
+          //- ==================================================
+          //- Carousel
+          //- ==================================================
+          #myCarousel.carousel.slide
+            .carousel-inner
+              .item.active
+                img(src='../assets/img/vt@princeton.jpg', alt='')
+                .container
+                  .carousel-caption
+                    h1 Healthiest College in U.S.
+                    p.lead
+                      | Healthy food is all-important at Virginia Tech. It ranks number 10 on College Prowler’s list of healthiest dining options (as rated by students) and number 3 on The Princeton Review’s list of best food. The fitness center offers a variety of programs including a running club and a six-week workout incentive program.
+                    a.btn.btn-large.btn-primary(href='http://greatist.com/health/25-healthiest-colleges/') Check it out!
+              .item
+                img(src='../assets/img/tedvt.jpeg', alt='')
+                .container
+                  .carousel-caption
+                    h1 Our Commitment to our Customers
+                    a.btn.btn-large.btn-primary(href='http://www.vtnews.vt.edu/articles/2012/10/101512-uged-tedx.html') Learn more
+            a.left.carousel-control(href='#myCarousel', data-slide='prev') ‹
+            a.right.carousel-control(href='#myCarousel', data-slide='next') ›
+
           .hero-unit
-            h1 Hello, world!
+            h3 Events
+            h4 Weather Related Closing 
+            p 
+              | Sbarro and Au Bon Pain in Squires Food Court and Au Bon Pain in GLC closing at 2:30 p.m. 
+              | Turner Place closing at 3:00 p.m.
+            h4 Chalk Talks Season 4 (Atheletics)
             p
-              | This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-            p
-              a.btn.btn-primary.btn-large Learn more »
+              | Virginia Tech Men's Basketball Coach James Johnson or his assistant coaches share strategies for the next big game during lunch.
+              p
+                a.btn.btn-primary.btn-small(href='http://www.calendar.vt.edu/main.php?calendarid=default&view=event&eventid=1351014452540') Learn more »
+
+
           .row-fluid
             .span4
               h2 Heading
@@ -75,59 +227,4 @@ block append content
                 a.btn(href='#') View details »
             //
               /span
-          //
-            /row
-          .row-fluid
-            .span4
-              h2 Heading
-              p
-                | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-              p
-                a.btn(href='#') View details »
-            //
-              /span
-            .span4
-              h2 Heading
-              p
-                | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-              p
-                a.btn(href='#') View details »
-            //
-              /span
-            .span4
-              h2 Heading
-              p
-                | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-              p
-                a.btn(href='#') View details »
-            //
-              /span
-          //
-            /row
-        //
-          /span
-      //
-        /row
-      hr
-      footer
-        p © Company 2012
-    //
-      /.fluid-container
-    //
-       Le javascript
           
-    //
-       Placed at the end of the document so the pages load faster 
-    script(src='../assets/js/jquery.js')
-    script(src='../assets/js/bootstrap-transition.js')
-    script(src='../assets/js/bootstrap-alert.js')
-    script(src='../assets/js/bootstrap-modal.js')
-    script(src='../assets/js/bootstrap-dropdown.js')
-    script(src='../assets/js/bootstrap-scrollspy.js')
-    script(src='../assets/js/bootstrap-tab.js')
-    script(src='../assets/js/bootstrap-tooltip.js')
-    script(src='../assets/js/bootstrap-popover.js')
-    script(src='../assets/js/bootstrap-button.js')
-    script(src='../assets/js/bootstrap-collapse.js')
-    script(src='../assets/js/bootstrap-carousel.js')
-    script(src='../assets/js/bootstrap-typeahead.js')
