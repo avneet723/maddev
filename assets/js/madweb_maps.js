@@ -1,6 +1,9 @@
 
+console.log('hey!!!');
 
 $(document).ready(function () {
+
+  console.log('hey');
 
   //-----------------------------
   // page variables
