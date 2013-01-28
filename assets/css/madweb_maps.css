@@ -9,38 +9,19 @@ body {
     padding: 0;
 }
 
-@media (max-width: 979px) {
-  body {
-    padding-top: 0;
-  }
-}
-
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) { 
-	.bottomControlBar div {
-		width: 700px;
-		margin: 0 auto;
-		background-color: #f0f;
+	body {
+	  padding-top: 0;
 	}
-}
- 
-/* Landscape phone to portrait tablet */
-@media (max-width: 767px) { 
-	.bottomControlBar div {
-		width: 480px;
-		margin: 0 auto;
-		background-color: #0f0;
+
+	.bottomMenu {
+		height: 10%;
 	}
 }
  
 /* Landscape phones and down */
 @media (max-width: 480px) { 
-	.bottomControlBar div {
-		width: 240px;
-		margin: 0 auto;
-		background-color: #ff0;
-	}
-
 	select {
 		font-size: 10px;
 		width: 100px;
@@ -51,7 +32,20 @@ body {
 		font-size: 10px;
 		width: 100px;
 		height: 20px;
-		padding: 0px;
+		padding: 0;
+	}
+
+	.bottomMenu {
+		position: fixed;
+		bottom: 0;
+		height: 50%;
+		width: 100%;
+		background-color: #000;
+		background-color: rgba(0,0,0,0.9);
+	}
+
+	.bottomMenu {
+		height: 50%;
 	}
 }
 
@@ -62,12 +56,24 @@ body {
 
 .bottomControlBar {
 	position: fixed;
-	bottom: 20px;
+	bottom: 0;
 	width: 100%;
 	margin: 0 auto;
-	background-color: #f00;
+	z-index: 10;
 }
-/*
-	.bottomControlBar div {
-		
-	}*/
+	
+	.bottomControlBar .bottomMenuButton {
+		width: 50px;
+		height: 25px;
+		margin: 0 auto;
+		background-color: #222;
+		cursor: pointer;
+	}
+
+.bottomMenu {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: #000;
+	background-color: rgba(0,0,0,0.9);
+}

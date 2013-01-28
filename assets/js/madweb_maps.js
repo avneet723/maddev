@@ -1,14 +1,11 @@
 
-console.log('hey!!!');
-
 $(document).ready(function () {
-
-  console.log('hey');
 
   //-----------------------------
   // page variables
   //
   var
+  menuShown = false,
   directionRenderer,
   startLocation,
   endLocation,
@@ -30,6 +27,7 @@ $(document).ready(function () {
   //
   $("#getDirections").click(function() {
     getDirections(startLocation, endLocation);
+    toggleBottomMenu();
   });
 
   $('#startLocation').change(function() {
@@ -47,6 +45,15 @@ $(document).ready(function () {
       long: building.long
     };
   });
+
+  $('#bottomMenuButton').click(function() {
+    toggleBottomMenu();
+    console.log('test');
+  });
+
+
+  // ------
+  // functions...
 
   function clearOverlays() {
     for (var i = 0; i < markersArray.length; i++) {
@@ -69,6 +76,18 @@ $(document).ready(function () {
       $('#startLocation').html(selectOptions);
       $('#endLocation').html(selectOptions);
     }); // end Ajax call
+  }
+
+  function toggleBottomMenu() {
+    if(menuShown) {
+      $('#bottomMenuButton').text('Open');
+      $('#bottomMenu').hide();
+    } else {
+      $('#bottomMenuButton').text('Close');
+      $('#bottomMenu').show();
+    }
+    console.log('shown? ' + menuShown);
+    menuShown = !menuShown;
   }
 
   function mapBuses() {

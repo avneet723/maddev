@@ -7,11 +7,14 @@ block append content
   div(class='row-fluid', style='height:100%;')
     #map_canvas(style='width: 100%; height: 100%;')
 
-  div(class='bottomControlBar')
-    div
-      select(id='startLocation')
-      select(id='endLocation')
-      a(class='btn', id='getDirections') Get Directions
+  .bottomControlBar
+    .bottomMenuButton(id='bottomMenuButton') Open
+
+  .bottomMenu(id='bottomMenu', style='display:none')
+    select(id='startLocation')
+    select(id='endLocation')
+    a(class='btn', id='getDirections') Get Directions
+
 
 block append footer
 
