@@ -22,7 +22,6 @@ app.controller('MapController', function($scope, $http) {
   $http.get('/data/buildingInfo.json').success(function(data) {
     $scope.buildingInformation = data.buildings;
   });
-  $scope.travelModes = ['walking', 'driving'];
 
   //---
   // Scope Functions
