@@ -1,0 +1,57 @@
+// variables
+@bottomBarHeight: 40px;
+@sideBarWidth: 100%;
+@phoneWidth: 480px;
+
+.bottomBar {
+	position: fixed; bottom: 0; left: 0; right: 0; height: @bottomBarHeight;
+	background-color: #111;
+	div {
+		height: @bottomBarHeight - 10px;
+		line-height: @bottomBarHeight - 10px;
+		margin: 5px; padding: 0 5px;
+		float: left;
+		cursor: pointer;
+		background-color: #222; color: #eee;
+		img {
+			height: 100%;
+			width: auto;
+			margin: 0 2px;
+		}
+	}
+	.active {
+		background-color: #121212;
+		outline: #333 2px solid;
+	}
+}
+
+.sideBar {
+	position: fixed;
+	top: 0;
+	bottom: @bottomBarHeight;
+	right: 0;
+	width: @sideBarWidth;
+	background-color: #000; background-color: rgba(0, 0, 0, 0.9);
+	z-index: 100;
+}
+
+.bottomMenu {
+	position: fixed; bottom: @bottomBarHeight; left: 0; right: 0;
+	background-color: #000; background-color: rgba(0, 0, 0, 0.7);
+	form {
+		margin: 5px;
+	}
+}
+
+.map_canvas {
+    position: absolute;
+    top: 0; left: 0; bottom: @bottomBarHeight; right: 0;
+}
+
+/* Anything phone size and smaller... */
+@media (max-width: @phoneWidth) {
+	select { font-size: 10px; width: 120px; height: 20px; }
+	.btn { font-size: 10px; width: 100px; height: 20px; padding: 0; }
+
+	.sideBar { width: 100%; }
+}

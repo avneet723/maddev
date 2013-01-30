@@ -1,0 +1,614 @@
+{
+  "buildings":[
+    {
+      "name":"  Agnew Hall",
+      "lat":37.22473,
+      "long":-80.424246
+    },
+    {
+      "name":"  Ambler Johnston Hall",
+      "lat":37.223118,
+      "long":-80.420989
+    },
+    {
+      "name":"  Architecture Annex",
+      "lat":37.228628,
+      "long":-80.416279
+    },
+    {
+      "name":"  Armory      ",
+      "lat":37.229295,
+      "long":-80.415931
+    },
+    {
+      "name":"  Art and Design Learning Center",
+      "lat":37.231704,
+      "long":-80.4207
+    },
+    {
+      "name":"  Au Bon Pain Squires",
+      "lat":37.229628,
+      "long":-80.418141
+    },
+    {
+      "name":"  Au Bon Pain GLC  ",
+      "lat":37.22827,
+      "long":-80.417529
+    },
+    {
+      "name":"  Barringer Hall   ",
+      "lat":37.226219,
+      "long":-80.416821
+    },
+    {
+      "name":"  Basketball Practice Facility",
+      "lat":37.223486,
+      "long":-80.418431
+    },
+    {
+      "name":"  Bioinformatics Phase I",
+      "lat":37.220829,
+      "long":-80.426252
+    },
+    {
+      "name":"  Bioinformatics Phase II",
+      "lat":37.221213,
+      "long":-80.426627
+    },
+    {
+      "name":"  Bishop-Favrao Hall   ",
+      "lat":37.230055,
+      "long":-80.425544
+    },
+    {
+      "name":"  Brodie Hall      ",
+      "lat":37.23026,
+      "long":-80.420094
+    },
+    {
+      "name":" Burchard Hall",
+      "lat":37.229654,
+      "long":-80.424289
+    },
+    {
+      "name":" Burke Johnston Student Center",
+      "lat":37.229303,
+      "long":-80.424685
+    },
+    {
+      "name":" Burrows/Burleson Tennis Center",
+      "lat":37.214754,
+      "long":-80.419643
+    },
+    {
+      "name":" Burruss Hall",
+      "lat":37.228859,
+      "long":-80.423505
+    },
+    {
+      "name":" Campbell Hall",
+      "lat":37.226288,
+      "long":-80.421606
+    },
+    {
+      "name":" Cassell Coliseum",
+      "lat":37.222836,
+      "long":-80.419332
+    },
+    {
+      "name":" Cheatham Hall",
+      "lat":37.223853,
+      "long":-80.422604
+    },
+    {
+      "name":" Cochrane Hall",
+      "lat":37.22264,
+      "long":-80.421939
+    },
+    {
+      "name":" College of Science Admin. Bldg.",
+      "lat":37.23108,
+      "long":-80.420126
+    },
+    {
+      "name":" Cowgill Hall",
+      "lat":37.22997,
+      "long":-80.424836
+    },
+    {
+      "name":" Cranwell International Center",
+      "lat":37.223417,
+      "long":-80.415748
+    },
+    {
+      "name":" D2",
+      "lat":37.224536,
+      "long":-80.420963
+    },
+    {
+      "name":" Davidson Hall",
+      "lat":37.226928,
+      "long":-80.425007
+    },
+    {
+      "name":" Deets",
+      "lat":37.224237,
+      "long":-80.421327
+    },
+    {
+      "name":" Derring Hall",
+      "lat":37.229047,
+      "long":-80.425544
+    },
+    {
+      "name":" Dietrick General",
+      "lat":37.224417,
+      "long":-80.421124
+    },
+    {
+      "name":" Dietrick Hall",
+      "lat":37.224571,
+      "long":-80.421263
+    },
+    {
+      "name":" Dietrick Mailroom",
+      "lat":37.224853,
+      "long":-80.420941
+    },
+    {
+      "name":" Durham Hall ",
+      "lat":37.231627,
+      "long":-80.42372
+    },
+    {
+      "name":" DX",
+      "lat":37.224605,
+      "long":-80.420769
+    },
+    {
+      "name":" Eggleston Hall",
+      "lat":37.227074,
+      "long":-80.420458
+    },
+    {
+      "name":" Engel Hall",
+      "lat":37.223656,
+      "long":-80.423688
+    },
+    {
+      "name":" English Field",
+      "lat":37.218428,
+      "long":-80.42416
+    },
+    {
+      "name":" Femoyer Hall",
+      "lat":37.231311,
+      "long":-80.421263
+    },
+    {
+      "name":" Food Science and Technology",
+      "lat":37.219803,
+      "long":-80.42549
+    },
+    {
+      "name":" Fralin Life Science Institute",
+      "lat":37.224161,
+      "long":-80.42357
+    },
+    {
+      "name":" Golf Course Clubhouse",
+      "lat":37.226834,
+      "long":-80.428623
+    },
+    {
+      "name":" Graduate Life Center at Donaldson Brown",
+      "lat":37.228142,
+      "long":-80.417444
+    },
+    {
+      "name":" The Grove",
+      "lat":37.22434,
+      "long":-80.427325
+    },
+    {
+      "name":" Hahn Hall - North Wing",
+      "lat":37.228329,
+      "long":-80.426306
+    },
+    {
+      "name":" Hahn Hall - South Wing",
+      "lat":37.227928,
+      "long":-80.425705
+    },
+    {
+      "name":" Hahn Horticulture Gardens",
+      "lat":37.220265,
+      "long":-80.424557
+    },
+    {
+      "name":" Hancock Hall",
+      "lat":37.23014,
+      "long":-80.424106
+    },
+    {
+      "name":" Harper Hall",
+      "lat":37.222759,
+      "long":-80.423183
+    },
+    {
+      "name":" Harry T. Peters Large Animal Clinic",
+      "lat":37.218257,
+      "long":-80.428891
+    },
+    {
+      "name":" Health and Safety Building",
+      "lat":37.215036,
+      "long":-80.417615
+    },
+    {
+      "name":" Henderson Hall",
+      "lat":37.230457,
+      "long":-80.416864
+    },
+    {
+      "name":"Hillcrest Hall",
+      "lat":37.223887,
+      "long":-80.424771
+    },
+    {
+      "name":"Hokie Grill",
+      "lat":37.226937,
+      "long":-80.41862
+    },
+    {
+      "name":" Holden Hall",
+      "lat":37.230328,
+      "long":-80.422293
+    },
+    {
+      "name":" Holtzman Alumni Center",
+      "lat":37.229141,
+      "long":-80.429621
+    },
+    {
+      "name":" Hutcheson Hall",
+      "lat":37.225724,
+      "long":-80.42313
+    },
+    {
+      "name":" Johnson Hall",
+      "lat":37.225527,
+      "long":-80.417701
+    },
+    {
+      "name":" Lane Hall",
+      "lat":37.230884,
+      "long":-80.419825
+    },
+    {
+      "name":" Lane Stadium/Worsham Field",
+      "lat":37.220504,
+      "long":-80.418334
+    },
+    {
+      "name":" Latham Hall",
+      "lat":37.224554,
+      "long":-80.422561
+    },
+    {
+      "name":" Lee Hall",
+      "lat":37.224519,
+      "long":-80.418506
+    },
+    {
+      "name":" Litton-Reaves Hall",
+      "lat":37.221563,
+      "long":-80.42372
+    },
+    {
+      "name":" Major Williams Hall",
+      "lat":37.230961,
+      "long":-80.420759
+    },
+    {
+      "name":" McBryde Hall",
+      "lat":37.23024,
+      "long":-80.421773
+    },
+    {
+      "name":" McComas Hall",
+      "lat":37.220513,
+      "long":-80.422679
+    },
+    {
+      "name":" Media Annex",
+      "lat":37.228808,
+      "long":-80.415952
+    },
+    {
+      "name":" Media Building",
+      "lat":37.228808,
+      "long":-80.415952
+    },
+    {
+      "name":" Merryman Athletic Center",
+      "lat":37.221572,
+      "long":-80.419085
+    },
+    {
+      "name":" Miles Hall",
+      "lat":37.225519,
+      "long":-80.416971
+    },
+    {
+      "name":" Military Building",
+      "lat":37.231763,
+      "long":-80.421596
+    },
+    {
+      "name":" Monteith Hall",
+      "lat":37.231934,
+      "long":-80.419385
+    },
+    {
+      "name":" New Hall West",
+      "lat":37.222136,
+      "long":-80.422733
+    },
+    {
+      "name":" New Residence Hall (East)",
+      "lat":37.225587,
+      "long":-80.419182
+    },
+    {
+      "name":" Newman Hall",
+      "lat":37.226236,
+      "long":-80.41784
+    },
+    {
+      "name":" Newman Library",
+      "lat":37.228654,
+      "long":-80.419332
+    },
+    {
+      "name":" Norris Hall",
+      "lat":37.229517,
+      "long":-80.423205
+    },
+    {
+      "name":" O’Shaughnessy Hall",
+      "lat":37.225339,
+      "long":-80.418366
+    },
+    {
+      "name":" Outreach and International Affairs",
+      "lat":37.233853,
+      "long":-80.431663
+    },
+    {
+      "name":" Owens Hall",
+      "lat":37.226487,
+      "long":-80.41914
+    },
+    {
+      "name":" Owens Mailroom",
+      "lat":37.226828,
+      "long":-80.419076
+    },
+    {
+      "name":" Pamplin Hall",
+      "lat":37.228622,
+      "long":-80.424258
+    },
+    {
+      "name":" Parking Services",
+      "lat":37.216047,
+      "long":-80.418465
+    },
+    {
+      "name":" Patton Hall ",
+      "lat":37.229255,
+      "long":-80.42222
+    },
+    {
+      "name":" Payne Hall",
+      "lat":37.225803,
+      "long":-80.420042
+    },
+    {
+      "name":" Peddrew-Yates Residence Hall",
+      "lat":37.225086,
+      "long":-80.419934
+    },
+    {
+      "name":" Peddrew-Yates Mailroom",
+      "lat":37.225265,
+      "long":-80.41959
+    },
+    {
+      "name":" Performing Arts Building",
+      "lat":37.230596,
+      "long":-80.420889
+    },
+    {
+      "name":" Price Hall",
+      "lat":37.225778,
+      "long":-80.424129
+    },
+    {
+      "name":" Pritchard Gym",
+      "lat":37.224231,
+      "long":-80.41943
+    },
+    {
+      "name":" Pritchard Hall",
+      "lat":37.224351,
+      "long":-80.419731
+    },
+    {
+      "name":" Pritchard Mailroom",
+      "lat":37.224257,
+      "long":-80.420117
+    },
+    {
+      "name":" Randolph Hall",
+      "lat":37.230392,
+      "long":-80.423307
+    },
+    {
+      "name":" Rasche Hall ",
+      "lat":37.231049,
+      "long":-80.419001
+    },
+    {
+      "name":" Rector Field House",
+      "lat":37.218986,
+      "long":-80.421726
+    },
+    {
+      "name":" Richard B. Talbot Educational Resources Center",
+      "lat":37.217721,
+      "long":-80.428399
+    },
+    {
+      "name":" Robeson Hall",
+      "lat":37.228247,
+      "long":-80.42517
+    },
+    {
+      "name":" Sandy Hall",
+      "lat":37.225838,
+      "long":-80.423529
+    },
+    {
+      "name":" Saunders Hall",
+      "lat":37.224941,
+      "long":-80.424398
+    },
+    {
+      "name":" Seitz Hall",
+      "lat":37.224633,
+      "long":-80.423679
+    },
+    {
+      "name":" Shanks Hall",
+      "lat":37.231715,
+      "long":-80.419967
+    },
+    {
+      "name":" Shultz Hall",
+      "lat":37.231817,
+      "long":-80.4184
+    },
+    {
+      "name":" Slusher Hall",
+      "lat":37.225368,
+      "long":-80.421512
+    },
+    {
+      "name":" Smith Career Center",
+      "lat":37.221592,
+      "long":-80.422563
+    },
+    {
+      "name":" Smyth Hall",
+      "lat":37.224941,
+      "long":-80.423056
+    },
+    {
+      "name":" Southgate Center",
+      "lat":37.218849,
+      "long":-80.416072
+    },
+    {
+      "name":" Squires Student Center",
+      "lat":37.229673,
+      "long":-80.418025
+    },
+    {
+      "name":" Student Services Building",
+      "lat":37.222079,
+      "long":-80.421844
+    },
+    {
+      "name":" Surge Space Building",
+      "lat":37.232979,
+      "long":-80.423099
+    },
+    {
+      "name":" Tennis Center",
+      "lat":37.214842,
+      "long":-80.419334
+    },
+    {
+      "name":" Theatre 101",
+      "lat":37.230185,
+      "long":-80.416344
+    },
+    {
+      "name":" Thomas Hall",
+      "lat":37.232161,
+      "long":-80.420051
+    },
+    {
+      "name":" Torgersen Hall",
+      "lat":37.229812,
+      "long":-80.420362
+    },
+    {
+      "name":" University Bookstore",
+      "lat":37.228129,
+      "long":-80.418618
+    },
+    {
+      "name":" Vawter Hall",
+      "lat":37.227065,
+      "long":-80.417572
+    },
+    {
+      "name":" Visitor Information Center",
+      "lat":37.215805,
+      "long":-80.423988
+    },
+    {
+      "name":" Wallace Annex",
+      "lat":37.22396,
+      "long":-80.425844
+    },
+    {
+      "name":" Wallace Hall",
+      "lat":37.222947,
+      "long":-80.424278
+    },
+    {
+      "name":" War Memorial Chapel",
+      "lat":37.228825,
+      "long":-80.420458
+    },
+    {
+      "name":" War Memorial Hall",
+      "lat":37.226706,
+      "long":-80.421016
+    },
+    {
+      "name":" Whittemore Hall",
+      "lat":37.23102,
+      "long":-80.424546
+    },
+    {
+      "name":" William E. Lavery Health Research Cente",
+      "lat":37.21724,
+      "long":-80.42681
+    },
+    {
+      "name":" Williams Hall",
+      "lat":37.22786,
+      "long":-80.424321
+    },
+    {
+      "name":" Women’s Softball Field",
+      "lat":37.218941,
+      "long":-80.420072
+    }
+  ]
+}

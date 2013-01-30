@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block title %}Maps!{% endblock %}
+{% block stylesheets %}
+  <link rel="stylesheet" href="/css/maps.css" />
+{% endblock %}
+{% block javascripts %}
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8vdQH_8XBS6Pr2b5Bggt8ElIvkzM8n-8&sensor=true"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+  <script src="/js/maps.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="map_canvas" id="map_canvas" style="width: 100%; height: 100%;"></div>
+
+<div ng-app="MapApp" ng-controller="MapController">
+
+  <div class="bottomMenu" ng-show="bottomMenuOpen">
+    <form ng-submit="getDirections(startLocation, endLocation)"
+          class="form-inline">
+      <select
+        ng-model="startLocation"
+        ng-options="b.name for b in buildingInformation">
+      </select>
+      <select
+        ng-model="endLocation"
+        ng-options="b.name for b in buildingInformation">
+      </select>
+      <select ng-model="selectedTravelMode"
+        ng-options="mode in travelModes">
+      </select>
+      <input type="submit" value="Get Directions" class="btn" />
+    </form>
+  </div>
+
+  <div class="sideBar" style="display:none">
+
+  </div>
+
+  <div class="bottomBar">
+    <div ng-class="{
+          active: bottomMenuOpen
+         }"
+         ng-click="bottomMenuOpen = !bottomMenuOpen">
+      Walking Paths<img src="/img/maps/directions.png" />
+    </div>
+    <div ng-show="hasDirections">
+      Clear Map
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

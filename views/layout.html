@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="utf-8">
+  <title>HokieHelper | {% block title %}{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/css/base.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="icon" href="/ico/hh.ico" type="image/x-icon">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/ico/hh144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/ico/hh114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/hh72.png">
+  <link rel="apple-touch-icon-precomposed" href="/ico/hh57.png">
+  {% block stylesheets %}
+  {% endblock %}
+</head>
+<body>
+  <div class="container navbar-wrapper">
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner pull-center"><a data-toggle="collapse" data-target=".nav-collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><font size="3" face="Calibri"><a href="#" class="brand">Hokie Helper</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="dining">Dining</a></li>
+              <li><a href="maps">Maps</a></li>
+              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Bus-Lookup<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <form class="navbar-search pull-right">
+                    <input type="text" id="routename" placeholder="Route Name" class="span2">
+                    <input type="text" id="stopcode" placeholder="Stop Code" class="span2">
+                    <button type="submit" class="btn btn-large btn-primary">Submit!</button>
+                  </form>
+                </ul>
+              </li>
+              <li><a href="twitter">Twitter</a></li>
+              <li><a href="about">About</a></li>
+              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Schedule<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Timetable of Classes</a></li>
+                  <li><a href="#">Available Seats</a></li>
+                  <li><a href="#">Course Lookup</a></li>
+                  <li class="divider"></li>
+                  <li class="nav-header">Others</li>
+                  <li><a href="calendar.google.com">Gogle Calendar</a></li>
+                  <li><a href="http://www.koofers.com/virginia-tech-vt/">VT Koofers</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div></font>
+      </div>
+    </div>
+  </div>
+
+  {% block content %}
+  {% endblock %}
+
+  <div class="container">
+    <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+      <p>© 2012 Mobile Application Development ·<a href="#">Privacy</a>·<a href="#">Terms</a></p>
+    </footer>
+  </div>
+
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap/bootstrap-transition.js"></script>
+  <script src="/js/bootstrap/bootstrap-alert.js"></script>
+  <script src="/js/bootstrap/bootstrap-modal.js"></script>
+  <script src="/js/bootstrap/bootstrap-dropdown.js"></script>
+  <script src="/js/bootstrap/bootstrap-scrollspy.js"></script>
+  <script src="/js/bootstrap/bootstrap-tab.js"></script>
+  <script src="/js/bootstrap/bootstrap-tooltip.js"></script>
+  <script src="/js/bootstrap/bootstrap-popover.js"></script>
+  <script src="/js/bootstrap/bootstrap-button.js"></script>
+  <script src="/js/bootstrap/bootstrap-collapse.js"></script>
+  <script src="/js/bootstrap/bootstrap-carousel.js"></script>
+  <script src="/js/bootstrap/bootstrap-typeahead.js"></script>
+
+  {% block javascripts %}
+  {% endblock %}
+</body>
