@@ -42,7 +42,10 @@
       Walking Paths<img src="/img/maps/directions.png" />
     </div>
     <div ng-show="hasDirections">
-      Clear Map
+      <form ng-submit="clearDirections()"
+          class="form-inline">
+        <input type="submit" value="Clear Map" class="btn" />
+      </form>
     </div>
   </div>
 

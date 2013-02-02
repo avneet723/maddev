@@ -51,6 +51,7 @@ app.controller('MapController', function($scope, $http) {
         'map': map
       };
       directionRenderer = new google.maps.DirectionsRenderer(renderOpts);
+      directionRenderer.setMap(map);
     });
 
     $scope.hasDirections = true;
