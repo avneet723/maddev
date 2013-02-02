@@ -31,7 +31,12 @@
   </div>
 
   <div class="sideBar" style="display:none">
-
+    <div ng-class="{
+          active: sideMenuOpen
+         }"
+         ng-click="sideMenuOpen = !sideMenuOpen">
+      <img src="/img/maps/directions_icon.png" />
+    </div>
   </div>
 
   <div class="bottomBar">
@@ -42,7 +47,10 @@
       Walking Paths<img src="/img/maps/directions.png" />
     </div>
     <div ng-show="hasDirections">
-      Clear Map
+      <form ng-submit="clearDirections()"
+          class="form-inline">
+        <input type="submit" value="Clear Map" class="btn" />
+      </form>
     </div>
   </div>
 
