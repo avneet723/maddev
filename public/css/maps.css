@@ -1,6 +1,81 @@
-.bottomBar{position:fixed;bottom:0;left:0;right:0;height:40px;background-color:#111;}.bottomBar div{height:30px;line-height:30px;margin:5px;padding:0 5px;float:left;cursor:pointer;background-color:#222;color:#eee;}.bottomBar div img{height:100%;width:auto;margin:0 2px;}
-.bottomBar .active{background-color:#121212;outline:#333 2px solid;}
-.sideBar{position:fixed;top:0;bottom:40px;right:0;width:100%;background-color:#000;background-color:rgba(0, 0, 0, 0.9);z-index:100;}
-.bottomMenu{position:fixed;bottom:40px;left:0;right:0;background-color:#000;background-color:rgba(0, 0, 0, 0.7);}.bottomMenu form{margin:5px;}
-.map_canvas{position:absolute;top:0;left:0;bottom:40px;right:0;}
-@media (max-width:480px){select{font-size:10px;width:120px;height:20px;} .btn{font-size:10px;width:100px;height:20px;padding:0;} .sideBar{width:100%;}}
+.bottomBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: #111;
+}
+
+.bottomBar div {
+    height: 30px;
+    line-height: 30px;
+    margin: 5px;
+    padding: 0 5px;
+    float: left;
+    cursor: pointer;
+    background-color: #222;
+    color: #eee;
+}
+
+.bottomBar div img {
+    height: 100%;
+    width: auto;
+    margin: 0 2px;
+}
+
+.bottomBar .active {
+    background-color: #121212;
+    outline: #333 2px solid;
+}
+
+.sideBar {
+    position: fixed;
+    top: 0;
+    bottom: 40px;
+    right: 0;
+    width: 100%;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 100;
+}
+
+.bottomMenu {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.bottomMenu form {
+    margin: 5px;
+}
+
+.map_canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 40px;
+    right: 0;
+}
+
+@media (max-width:480px) {
+    select {
+        font-size: 10px;
+        width: 120px;
+        height: 20px;
+    }
+
+    .btn {
+        font-size: 10px;
+        width: 100px;
+        height: 20px;
+        padding: 0;
+    }
+
+    .sideBar {
+        width: 100%;
+    }
+}
