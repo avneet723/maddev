@@ -19,7 +19,7 @@ app.controller('MapController', function($scope, $http) {
   $scope.hasDirections = false; // do we have directions initially?
   // load in Building Information from an external data file:
   $scope.buildingInformation = []; // initially empty
-  $http.get('/data/buildingInfo.json').success(function(data) {
+  $http.get('/data/buildingInfo.txt').success(function(data) {
     $scope.buildingInformation = data.buildings;
   });
 
