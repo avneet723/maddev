@@ -30,6 +30,11 @@ app.controller('MapController', function($scope, $http) {
     if(typeof directionRenderer !== 'undefined') {
       directionRenderer.setMap(null);
     }
+    map = new google.maps.Map(document.getElementById("map_canvas"), {
+      center: new google.maps.LatLng(37.227774, -80.421919),
+      zoom: 17,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
   };
 
   $scope.getDirections = function(startLocation, endLocation) {
@@ -52,6 +57,7 @@ app.controller('MapController', function($scope, $http) {
       };
       directionRenderer = new google.maps.DirectionsRenderer(renderOpts);
       directionRenderer.setMap(map);
+      directionRenderer.setDirections(result);
     });
 
     $scope.hasDirections = true;
