@@ -31,28 +31,39 @@
   </div>
 
   <div class="sideBar" ng-show="showSideBar">
+    <p><strong><u>Time:</u></strong>
+      {[{ currentRoute.time }]}</p>
+    <p><strong><u>Total Distance:</u></strong>
+      {[{ currentRoute.distance }]}</p>
+    <p><img src="/img/maps/pin.png" />
+      <strong>{[{startLocation.name}]}</strong></p>
+
     <div ng-class="{ active: sideMenuOpen }"
          ng-click="sideMenuOpen = !sideMenuOpen">
-      <div ng-repeat="step in currentRoute.steps">
-        <p ng-model="step"></p>
+      <div ng-repeat="step in currentRoute.steps"
+           class="directionStep">
+        {[{ $index + 1 }]}.
+        <span ng-bind-html-unsafe="step"></span>
       </div>
     </div>
+
+    <p><img src="/img/maps/pin.png" />
+      <strong>{[{endLocation.name}]}</strong></p>
   </div>
 
   <div class="bottomBar">
     <div ng-class="{
           active: bottomMenuOpen
          }"
-         ng-click="bottomMenuOpen = !bottomMenuOpen">
+         ng-click="toggleWalkingDirections()">
       Walking Paths<img src="/img/maps/directions.png" />
     </div>
 
     <div ng-show="hasDirections">
-<!--       <form ng-submit="clearDirections()"
-          class="form-inline">
-        <input type="submit" value="Clear Map" class="btn" />
-      </form> -->
-      <span ng-click="showTurnByTurn()">
+      <span type="submit" ng-click="clearDirections()">
+        Clear
+      </span>
+      <span ng-click="toggleTurnByTurn()">
         <img src="/img/maps/directions_icon.png" />
         Turn by Turn
       </span>

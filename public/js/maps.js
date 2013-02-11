@@ -3,6 +3,11 @@
 // nature of it. JQuery is a pain.
 var app = angular.module('MapApp', []);
 
+app.config(function($interpolateProvider) {
+  $interpolateProvider.startSymbol('{[{');
+  $interpolateProvider.endSymbol('}]}');
+});
+
 app.controller('MapController', function($scope, $http) {
 
   //---
@@ -27,7 +32,7 @@ app.controller('MapController', function($scope, $http) {
 
   // What route are we currently viewing?
   $scope.currentRoute = {
-    disance: '',
+    distance: '',
     time: '',
     startAddr: '',
     endAddr: '',
@@ -54,6 +59,7 @@ app.controller('MapController', function($scope, $http) {
        typeof endLocation === 'undefined') { return; }
 
     $scope.clearDirections();
+    $scope.bottomMenuOpen = false;
 
     var directionsRequest  = {
       origin: new google.maps.LatLng(startLocation.lat, startLocation.long),
@@ -71,7 +77,7 @@ app.controller('MapController', function($scope, $http) {
       var legs = result.routes[0].legs[0];
 
       $scope.currentRoute = {
-        disance: legs.distance.text,
+        distance: legs.distance.text,
         time: legs.duration.text,
         startAddr: legs.start_address,
         endAddr: legs.end_address,
@@ -96,12 +102,14 @@ app.controller('MapController', function($scope, $http) {
     $scope.hasDirections = true;
   };
 
-  $scope.showTurnByTurn = function() {
-    $scope.showSideBar = true;
+  $scope.toggleWalkingDirections = function() {
+    $scope.bottomMenuOpen = !$scope.bottomMenuOpen;
+    if($scope.showSideBar) $scope.showSideBar = false;
+  };
 
-
-
-    //console.log(directionRenderer.getDirections());
+  $scope.toggleTurnByTurn = function() {
+    $scope.showSideBar = !$scope.showSideBar;
+    if($scope.bottomMenuOpen) $scope.bottomMenuOpen = false;
   };
 
 });
