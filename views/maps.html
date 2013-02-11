@@ -30,12 +30,12 @@
     </form>
   </div>
 
-  <div class="sideBar" style="display:none">
-    <div ng-class="{
-          active: sideMenuOpen
-         }"
+  <div class="sideBar" ng-show="showSideBar">
+    <div ng-class="{ active: sideMenuOpen }"
          ng-click="sideMenuOpen = !sideMenuOpen">
-      <img src="/img/maps/directions_icon.png" />
+      <div ng-repeat="step in currentRoute.steps">
+        <p ng-model="step"></p>
+      </div>
     </div>
   </div>
 
@@ -46,12 +46,18 @@
          ng-click="bottomMenuOpen = !bottomMenuOpen">
       Walking Paths<img src="/img/maps/directions.png" />
     </div>
+
     <div ng-show="hasDirections">
-      <form ng-submit="clearDirections()"
+<!--       <form ng-submit="clearDirections()"
           class="form-inline">
         <input type="submit" value="Clear Map" class="btn" />
-      </form>
+      </form> -->
+      <span ng-click="showTurnByTurn()">
+        <img src="/img/maps/directions_icon.png" />
+        Turn by Turn
+      </span>
     </div>
+
   </div>
 
 </div>

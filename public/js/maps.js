@@ -4,6 +4,7 @@
 var app = angular.module('MapApp', []);
 
 app.controller('MapController', function($scope, $http) {
+
   //---
   // Google Maps related
   var
@@ -17,11 +18,21 @@ app.controller('MapController', function($scope, $http) {
   //---
   // Scope variables (Initial values)
   $scope.hasDirections = false; // do we have directions initially?
+  $scope.showSideBar = false;
   // load in Building Information from an external data file:
   $scope.buildingInformation = []; // initially empty
   $http.get('/data/buildingInfo.txt').success(function(data) {
     $scope.buildingInformation = data.buildings;
   });
+
+  // What route are we currently viewing?
+  $scope.currentRoute = {
+    disance: '',
+    time: '',
+    startAddr: '',
+    endAddr: '',
+    steps: []
+  };
 
   //---
   // Scope Functions
@@ -35,6 +46,7 @@ app.controller('MapController', function($scope, $http) {
       zoom: 17,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
+    $scope.hasDirections = false;
   };
 
   $scope.getDirections = function(startLocation, endLocation) {
@@ -55,12 +67,41 @@ app.controller('MapController', function($scope, $http) {
         'directions': result,
         'map': map
       };
+
+      var legs = result.routes[0].legs[0];
+
+      $scope.currentRoute = {
+        disance: legs.distance.text,
+        time: legs.duration.text,
+        startAddr: legs.start_address,
+        endAddr: legs.end_address,
+
+        steps: (function() {
+          var ret = [];
+          for(var i = 0, len = legs.steps.length; i < len; ++i) {
+            ret.push(legs.steps[i].instructions);
+          }
+          return ret;
+        }())
+
+      }; //
+
+      console.log($scope.currentRoute);
+
       directionRenderer = new google.maps.DirectionsRenderer(renderOpts);
       directionRenderer.setMap(map);
       directionRenderer.setDirections(result);
     });
 
     $scope.hasDirections = true;
+  };
+
+  $scope.showTurnByTurn = function() {
+    $scope.showSideBar = true;
+
+
+
+    //console.log(directionRenderer.getDirections());
   };
 
 });
