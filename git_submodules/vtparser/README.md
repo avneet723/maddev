@@ -1,7 +1,7 @@
 VT Parser
 =========
 
-Various parsing scripts that gather data from Virginia Tech's online services.
+Various parsing scripts that gather data from Virginia Tech's online services. They require the use of [phantomjs](phantomjs.org) to run. 
 
 Timetable Parser
 ----------------
