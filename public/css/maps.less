@@ -1,7 +1,7 @@
 // variables
 @bottomBarHeight: 40px;
 @sideBarWidth: 400px;
-@phoneWidth: 480px;
+@phoneWidth: 720px;
 
 .bottomBar {
 	position: fixed; bottom: 0; left: 0; right: 0; height: @bottomBarHeight;
@@ -12,16 +12,13 @@
 		margin: 5px; padding: 0 5px;
 		float: left;
 		cursor: pointer;
-		background-color: #222; color: #eee;
+		// background-color: #222; color: #eee;
+		// border: 3px solid white;
 		img {
 			height: 100%;
 			width: auto;
 			margin: 0 2px;
 		}
-	}
-	.active {
-		background-color: #121212;
-		outline: #333 2px solid;
 	}
 }
 
@@ -35,10 +32,12 @@
 	font-size: 15px;
 	color: #efefef;
 	z-index: 100;
+	padding: 5px;
 	overflow-y: auto;
 
 	.directionStep {
-		background-color: rgba(255, 255, 255, 0.05);
+		background-color: rgba(255, 255, 255, 0.1);
+		padding: 5px;
 	}
 
 	.sidebarContainer {
@@ -62,7 +61,9 @@
 /* Anything phone size and smaller... */
 @media (max-width: @phoneWidth) {
 	select { font-size: 10px; width: 120px; height: 20px; }
-	.btn { font-size: 10px; width: 100px; height: 20px; padding: 0; }
-
-	.sideBar { width: 100%;}
+	.btn { font-size: 10px; height: 20px; padding: 0; }
+	.sideBar { left: 0; width: auto; right: 0;}
+	.bottomMenu {
+		top: 0;
+	}
 }

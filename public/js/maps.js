@@ -52,6 +52,7 @@ app.controller('MapController', function($scope, $http) {
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
     $scope.hasDirections = false;
+    $scope.showSideBar = false;
   };
 
   $scope.getDirections = function(startLocation, endLocation) {

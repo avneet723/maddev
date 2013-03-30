@@ -13,7 +13,7 @@
 {% block content %}
 <div class="map_canvas" id="map_canvas" style="width: 100%; height: 100%;"></div>
 
-<div ng-app="MapApp" ng-controller="MapController">
+<div ng-app="MapApp" ng-controller="MapController" ng-cloak>
 
   <div class="bottomMenu" ng-show="bottomMenuOpen">
     <form ng-submit="getDirections(startLocation, endLocation)"
@@ -32,8 +32,8 @@
 
   <div class="sideBar" ng-show="showSideBar">
     <p><strong><u>Time:</u></strong>
-      {[{ currentRoute.time }]}</p>
-    <p><strong><u>Total Distance:</u></strong>
+      {[{ currentRoute.time }]}
+    <strong><u>Total Distance:</u></strong>
       {[{ currentRoute.distance }]}</p>
     <p><img src="/img/maps/pin.png" />
       <strong>{[{startLocation.name}]}</strong></p>
@@ -52,21 +52,18 @@
   </div>
 
   <div class="bottomBar">
-    <div ng-class="{
-          active: bottomMenuOpen
-         }"
+    <div ng-class="{active: bottomMenuOpen}" class="btn btn-primary"
          ng-click="toggleWalkingDirections()">
-      Walking Paths<img src="/img/maps/directions.png" />
+      Walking Paths <img src="/img/maps/directions.png" />
     </div>
 
-    <div ng-show="hasDirections">
-      <span type="submit" ng-click="clearDirections()">
-        Clear
-      </span>
-      <span ng-click="toggleTurnByTurn()">
-        <img src="/img/maps/directions_icon.png" />
-        Turn by Turn
-      </span>
+    <div ng-show="hasDirections" class="btn btn-primary" type="submit" ng-click="clearDirections()">
+      Clear
+    </div>
+
+    <div ng-show="hasDirections" class="btn btn-primary" ng-click="toggleTurnByTurn()">
+      <img src="/img/maps/directions_icon.png" />
+      Turn by Turn
     </div>
 
   </div>

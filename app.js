@@ -26,7 +26,7 @@ swig.init({ root: __dirname + '/views', allowErrors: true });
 
 // Express JS
 app.configure(function() {
-  app.set('port', process.env.PORT || 3000); // port to listen on
+  app.set('port', process.env.PORT || 10576); // port to listen on
   app.set('views', __dirname + '/views');
   app.engine('.html', cons.swig); // use Swig templates
   app.set('view engine', 'html');
